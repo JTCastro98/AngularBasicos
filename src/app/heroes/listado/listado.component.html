@@ -1,0 +1,27 @@
+<!-- Se crea el titulo de la página -->
+<p>Listado de Héroes</p>
+
+<!-- Se crea una apartado donde se mostrarán a los heroes borrados -->
+<!-- Se crea una condición para que este apartado se muestra solamente cuando no se regresa un valor vacío -->
+<div *ngIf="heroesBorrados; else noBorrado">
+    <h3> Heroé borrado: <small> {{ heroesBorrados }} </small> </h3>
+    
+</div>
+
+<!-- Se crea una condición para que este apartado se muestra solamente cuando no se regresa un valor vacío -->
+<ng-template #noBorrado>
+    <h3> Ningún héroe ha sido borrado. </h3>    
+</ng-template>
+
+<!-- Se crea una boton para borrar a los heroes -->
+<button (click)="borrarHeroe()">
+    Borrar
+</button>
+
+<!-- Se hace un FOR para poder extraer de la cadena a todos los heroes -->
+<ul>
+    <li *ngFor="let heroe of heroes; let i = index">
+        {{ i +1 }} {{ heroe }}
+    </li>        
+</ul>
+
