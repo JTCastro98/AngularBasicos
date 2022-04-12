@@ -7,17 +7,21 @@
         <!-- Creamos la primera columna llamada Persojanes -->
         <div class="col">
             <!-- Se envia el arreglo del padre hacía el hijo -->
-            <app-personajes [personajes]="personajes"></app-personajes>
+            <!-- <app-personajes [personajes]="personajes"></app-personajes> -->
+            <app-personajes></app-personajes>
             
         </div>
 
         <!-- Creamos una segunda columna--> 
         <!-- Creamos un evento que recibe los datos desde el modulo hijo y que permite anexarlos al arreglo padre -->
         <div class="col">
+            <app-agregar [nuevoPersonaje]="nuevoPersonaje">
+        </app-agregar>
+        <!-- <div class="col">
             <app-agregar 
             [nuevoPersonaje]="nuevoPersonaje"
             (onNuevoPersonaje)="agregarNewCharacter( $event )">
-        </app-agregar>
+        </app-agregar> -->
         </div>
     </div>
  

@@ -3,6 +3,7 @@ import { Component, Input } from '@angular/core';
 
 //Importamos el modulo de personaje que fue creado por nosotros
 import { Personaje } from '../interfaces/dbz.interface';
+import { DbzService } from '../services/dbz.service';
 
 //Componentes requeridos
 @Component({
@@ -12,9 +13,16 @@ import { Personaje } from '../interfaces/dbz.interface';
 
 //Exportamos la clase de Personajes Componentes
 export class PersonajesComponent {
-
+ 
   //Se recibe el arreglo padre solicitado con el Input
   //El arreglo nos trae a todos los personajes existentes en el arreglo padre.
-  @Input() personajes: Personaje[] = [];
+  // @Input() personajes: Personaje[] = [];
 
+  //Se obtienen los personajes mediante el metodo get del arreglo privado dentro del servicio
+  get personajes() {
+    return this.dbzService.personajes;
+  }
+
+  //iniciamos el constructor a nuestro servicio
+  constructor( private dbzService: DbzService) {}
 }

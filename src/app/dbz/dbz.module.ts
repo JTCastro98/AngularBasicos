@@ -8,6 +8,9 @@ import { MainPageComponent } from './main-page/main-page.component';
 import { PersonajesComponent } from './personajes/personajes.component';
 import { AgregarComponent } from './agregar/agregar.component';
 
+//Se importa el servicio
+import { DbzService } from './services/dbz.service';
+
 
 
 
@@ -22,9 +25,14 @@ import { AgregarComponent } from './agregar/agregar.component';
     // Exportamos el modulo que queremos que sea visto como página principal en nuestro HTML general
     MainPageComponent
   ],
+  //Se importan los modulos pertenecientes a angular
   imports: [
     CommonModule,
     FormsModule
+  ],
+  //Los providers son servicios especificados que sirven como una unica instancia de todo este modulo
+  providers: [
+    DbzService
   ]
 })
 

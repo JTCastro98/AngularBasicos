@@ -3,6 +3,7 @@ import { Component, EventEmitter, Input, Output} from '@angular/core';
 
 //Se importa el modulo Personajes para poder utilizar la información perteneciente a esté
 import { Personaje } from '../interfaces/dbz.interface';
+import { DbzService } from '../services/dbz.service';
 
 //Se crean los componentes pertenecientes a esté modulo
 @Component({
@@ -20,9 +21,12 @@ export class AgregarComponent {
     poder: 0
   }
 
-  //Output: Se utiliza cuando el componente hijo emite un valor hacía el padre.
-  //Creamos el evento de onNuevoPersonaje para enviar la información ingresada hacía el modulo padre.
-  @Output() onNuevoPersonaje: EventEmitter<Personaje> = new EventEmitter();
+  //Anexamos nuestro servicio al constructor para poder utilizarlo dentro de esté modulo
+  constructor( private dbzService: DbzService){  }
+
+  //Output: Se utiliza cuando se quiere implementar un evento, en este caso, el componente hijo emite un valor hacía el padre.
+  //Creamos el evento EventEmite de onNuevoPersonaje para enviar la información ingresada hacía el modulo padre.
+  // @Output() onNuevoPersonaje: EventEmitter<Personaje> = new EventEmitter();
 
   // cambiarNombre( event:any ){
   //   console.log( event.target.value );
@@ -33,9 +37,12 @@ export class AgregarComponent {
     //Si nuestro personaje no tiene ningún valor no regresa nada
     if(this.nuevoPersonaje.nombre.trim().length === 0){ return;}
     
-    console.log(this.nuevoPersonaje);
+    // console.log(this.nuevoPersonaje);
     //Enviamos hacía nuestro componente padre la información agregada mediante el Out creado anteriormente
-    this.onNuevoPersonaje.emit(this.nuevoPersonaje);
+    // this.onNuevoPersonaje.emit(this.nuevoPersonaje);
+
+    //Seleccionamos nuestra funcion agregarPersonaje de nuestro servicio y le pasamos el parametro del nuevo personaje a agregar
+    this.dbzService.agregarPersonaje( this.nuevoPersonaje );
 
     //Limpiamos los valores anteriores a nuestro arreglo de nuevoPersonaje
     this.nuevoPersonaje =  {

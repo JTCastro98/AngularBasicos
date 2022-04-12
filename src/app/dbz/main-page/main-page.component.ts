@@ -3,6 +3,7 @@ import { Component } from '@angular/core';
 
 //Se importan el modulo personaje creado por nosotros
 import { Personaje } from '../interfaces/dbz.interface';
+import { DbzService } from '../services/dbz.service';
 
 //Se crea una interfaz con los campos a utilizar
 // interface Personaje {
@@ -18,17 +19,9 @@ import { Personaje } from '../interfaces/dbz.interface';
 //Se exporta la clase MainPage para que pueda ser visbles por otros
 export class MainPageComponent {
 
-  //Se crea un arreglo de personajes en el cual se podran anexar nuevos personajes
-  personajes: Personaje[] = [
-    {
-      nombre: 'Goku',
-      poder:10200
-    },
-    {
-      nombre: 'Veggeta',
-      poder:9500
-    }
-  ];
+  // personajes: Personaje[] = [];
+
+
 
   //Se crea el arreglo para poder crear e ingresar al arreglo padre.
   nuevoPersonaje: Personaje = {
@@ -36,12 +29,26 @@ export class MainPageComponent {
     poder: 15400
   }
 
+  constructor() {}
+
+  //Mediante un get se puede obtener la estructura del servicio
+  // get personajes():Personaje[] {
+  //   return this.dbzService.personajes;
+  // }
+
   //Se crea una función para poder ingresar los valores de los nuevos personajes
-  agregarNewCharacter(guerrerozZ: Personaje){
-    // console.log(guerrerozZ);
-    this.personajes.push(guerrerozZ);
-  };
-  
+  // agregarNewCharacter(guerrerozZ: Personaje){
+  //   Debugger es una función propia de JavaScript que al ejecutarse en Chrome pausa la aplicación al llegar a esté apartado
+  //    debugger;
+  //    console.log(guerrerozZ);
+  //   this.personajes.push(guerrerozZ);
+  // };
+
+  //Esto se conoce una inyección de dependencias 
+  //Se inyecta el servicio en un componente
+  // constructor( private dbzService: DbzService) {
+  //   this.personajes = this.dbzService.personajes;
+  // }  
   //Se establece un parametro de recibimiento para que el evento puede ejecutarse de cualquier tipo de dato
   // agregar( event:any ){
   //   //Preveemos que el evento se ejecute de manera automatica
