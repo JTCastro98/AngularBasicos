@@ -40,3 +40,20 @@
   .p-1 {
     padding: 1px;
   }
+
+/* Ajustamos las filas de nuestras tablas */
+  .row{
+    display: flex;
+  }
+
+/* Ajustamos las columnas de nuestras tablas */  
+  .col{
+    flex-grow: 1;
+    margin-right: 10px;
+  }
+
+/* Ajustamos los archivos tipo input de nuestro proyecto */  
+  input{
+    display: block;
+    margin: 5px;
+  }

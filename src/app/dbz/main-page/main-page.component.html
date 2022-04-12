@@ -1,0 +1,37 @@
+<!-- Agregamos el titulo de la página -->
+<h3> Dragon Ball Z </h3>
+<hr>
+
+<!-- Creamos una tabla, con sus respectivas filas y columnas-->
+    <div class="row">
+        <!-- Creamos la primera columna llamada Persojanes -->
+        <div class="col">
+            <!-- Se envia el arreglo del padre hacía el hijo -->
+            <app-personajes [personajes]="personajes"></app-personajes>
+            
+        </div>
+
+        <!-- Creamos una segunda columna--> 
+        <!-- Creamos un evento que recibe los datos desde el modulo hijo y que permite anexarlos al arreglo padre -->
+        <div class="col">
+            <app-agregar 
+            [nuevoPersonaje]="nuevoPersonaje"
+            (onNuevoPersonaje)="agregarNewCharacter( $event )">
+        </app-agregar>
+        </div>
+    </div>
+ 
+<!-- Se agrega un formulario para agregar nuevos personajes
+     Se agrega un evento al formulario para evitar el refresh automatico
+    <form (submit)="agregar( $event )">
+        Se anexa el cuadro de texto del nombre de personaje 
+        <input type="text" placeholder="Nombre"/>
+        Se anea el cuadro de texto del poder del personaje
+        <input type="number" placeholder="Poder"/>
+        Se anexa el boton para agregar al nuevo personake
+        <button type="submit" >
+            Agregar
+        </button>
+    </form> -->
+
+    

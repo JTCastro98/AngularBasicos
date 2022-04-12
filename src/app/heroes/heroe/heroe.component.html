@@ -1,19 +1,26 @@
+<!-- Titulo de la página, la cual nos muestra el nombre de los heroes -->
 <h1> {{ nombre }} </h1>
 
 <dl>
+    <!-- Mostramos el nombre de los heroes -->
     <td> Nombre </td>
     <dd>{{ nombre }}</dd>
 
+    <!-- Mostramos la edad de los heroes -->
     <td> Edad </td>
     <dd>{{ edad }}</dd>
 
+    <!-- Obteemos el nombre de los heroes-->
     <td> Funcion </td>
     <dd>{{ obtenerNombre() }}</dd>
 
+    <!-- Obteemos el nombre de los heroes y se convierte a mayusculas con la función creada -->
     <td> Capitalizado </td>
     <dd>{{ nombreCapitalizado }}</dd>
 </dl>
 
+<!-- Cambiamos el nombre a la de un diferente heroé -->
 <button (click)="cambiarNombre()">Cambiar Heroe</button>
 
+<!-- Cambiamos la edad a la de un diferente heroé -->
 <button (click)="cambiarEdad()">Cambiar Edad</button>

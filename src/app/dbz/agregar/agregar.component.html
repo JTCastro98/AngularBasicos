@@ -1,0 +1,34 @@
+
+<!-- Creamos el titulo de la segunda columna -->
+<h3>Agregar {{ nuevoPersonaje.nombre }} </h3>
+<hr>
+
+<!-- Se agrega un formulario para agregar nuevos personajes -->
+<!-- Al presionar el boton de submit se ejecuta la función agregar -->
+<form (ngSubmit)="agregar( )">
+    <!-- Se anexa el cuadro de texto del nombre de personaje -->
+    <!-- Las llaves cuadras son para establecer alguna propiedad a un objeto -->
+    <!-- El parentesis es para emitir o escuchar eventos -->
+    <!-- [value]="nuevoPersonaje.nombre"
+        (input)="cambiarNombre( $event )" -->
+ 
+    <input 
+        type="text" 
+        placeholder="Nombre"
+        name="nombre"
+        [(ngModel)]="nuevoPersonaje.nombre"
+    />
+
+    <!-- Se anexa el cuadro de texto del poder del personaje -->
+    <input 
+        type="number" 
+        placeholder="Poder"
+        name="poder"
+        [(ngModel)]="nuevoPersonaje.poder"
+    />
+
+    <!-- Se anexa el boton para agregar al nuevo personake -->
+    <button type="submit" >
+        Agregar
+    </button>
+</form>

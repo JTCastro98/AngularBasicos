@@ -1,0 +1,9 @@
+<h3>Personajes</h3>
+    <hr>
+    <!-- Se agregan las filas con la información anexada  -->
+    <ul>
+        <li *ngFor="let personaje of personajes"> 
+            <!-- Se le agrega el '| number' para darle valor númerico visual a los números -->
+            {{ personaje.nombre }} - {{ personaje.poder | number }}  
+        </li>                             
+    </ul>

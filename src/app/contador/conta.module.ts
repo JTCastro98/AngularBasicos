@@ -1,5 +1,8 @@
 
+//Importamos los modulos pertenecientes a angular
 import { NgModule } from '@angular/core';
+
+//Importamos el modulo de contador componentes para poder utilizar sus datos
 import { ContadorComponent } from './conta/contador.component';
 
 @NgModule({
